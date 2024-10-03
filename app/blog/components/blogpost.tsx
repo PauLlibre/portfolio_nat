@@ -1,18 +1,64 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, ReactNode } from 'react';
 import { BlogPost } from '@/app/types/blogpost';
 import { ArrowLeft } from 'react-feather';
 import Image from 'next/image';
 
-interface ContentBlock {
-  type: string;
-  children: ContentBlock[];
-  text?: string;
+interface TextBlock {
+  type: 'text';
+  text: string;
   bold?: boolean;
   italic?: boolean;
   underline?: boolean;
   code?: boolean;
-  url: string; 
 }
+
+interface LinkBlock {
+  type: 'link';
+  url: string;
+  children: Block[];
+}
+
+interface ParagraphBlock {
+  type: 'paragraph';
+  children: Block[];
+}
+
+interface HeadingBlock {
+  type: 'heading-one' | 'heading-two' | 'heading-three';
+  children: Block[];
+}
+
+interface ListItemBlock {
+  type: 'list-item';
+  children: Block[];
+}
+
+interface ListBlock {
+  type: 'bulleted-list' | 'numbered-list';
+  children: Block[];
+}
+
+interface QuoteBlock {
+  type: 'quote';
+  children: Block[];
+}
+
+interface ImageBlock {
+  type: 'image';
+  url: string;
+}
+
+
+
+type Block =
+  | TextBlock
+  | LinkBlock
+  | ParagraphBlock
+  | HeadingBlock
+  | ListItemBlock
+  | ListBlock
+  | QuoteBlock
+  | ImageBlock;
 
 export default function BlogPostPage({
   post,
@@ -42,12 +88,12 @@ export default function BlogPostPage({
     }
   }, []);
 
-  // Recursive function to render content blocks
-  const renderContent = (contentBlocks: ContentBlock[]) => {
-    return contentBlocks.map((block, index) => {
-      const { type, children } = block;
+  // Render content blocks
+  const renderContent = (blocks: Block[]): ReactNode => {
+    return blocks.map((block, index) => {
+      const { type } = block;
+      const children = 'children' in block ? block.children : undefined;
 
-      // Render different block types
       switch (type) {
         case 'paragraph':
           return (
@@ -57,33 +103,29 @@ export default function BlogPostPage({
           );
         case 'heading-one':
           return (
-            <h1 className='mt-10 mb-6' key={index}>
+            <h1 className="mt-10 mb-6" key={index}>
               {children && renderChildren(children)}
             </h1>
           );
         case 'heading-two':
           return (
-            <h2 className='mt-8 mb-5' key={index}>
+            <h2 className="mt-8 mb-5" key={index}>
               {children && renderChildren(children)}
             </h2>
           );
         case 'heading-three':
           return (
-            <h3 className='mt-6 mb-4' key={index}>
+            <h3 className="mt-6 mb-4" key={index}>
               {children && renderChildren(children)}
             </h3>
           );
         case 'bulleted-list':
-          return (
-            <ul key={index}>
-              {children && renderChildren(children)}
-            </ul>
-          );
         case 'numbered-list':
+          const ListTag = type === 'bulleted-list' ? 'ul' : 'ol';
           return (
-            <ol key={index}>
+            <ListTag key={index}>
               {children && renderChildren(children)}
-            </ol>
+            </ListTag>
           );
         case 'list-item':
           return (
@@ -98,11 +140,12 @@ export default function BlogPostPage({
             </blockquote>
           );
         case 'image':
+          const imageBlock = block as ImageBlock;
           return (
             <Image
               key={index}
-              src={block.url}
-              alt={''}
+              src={imageBlock.url}
+              alt=""
             />
           );
         default:
@@ -111,42 +154,67 @@ export default function BlogPostPage({
     });
   };
 
-  // Function to render children with formatting
-  const renderChildren = (children: any[]) => {
+  // Render children with formatting
+  const renderChildren = (children: Block[]): ReactNode => {
     return children.map((child, index) => {
-      if (child.type === 'text') {
-        let textElement = <>{child.text}</>;
-
-        // Apply text formatting
-        if (child.bold) {
-          textElement = <strong className='font-bold my-2 inline-block' key={index}>{textElement}</strong>;
-        }
-        if (child.italic) {
-          textElement = <em key={index}>{textElement}</em>;
-        }
-        if (child.underline) {
-          textElement = <u key={index}>{textElement}</u>;
-        }
-        if (child.code) {
-          textElement = <code key={index}>{textElement}</code>;
-        }
-
-        return textElement;
-      } else if (child.type === 'link') {
-        return (
-          <a key={index} href={child.url}>
-            {child.children && renderChildren(child.children)}
-          </a>
-        );
-      } else {
-        // Recursively render nested children
-        return renderContent([child]);
+      switch (child.type) {
+        case 'text':
+          return renderText(child as TextBlock, index);
+        case 'link':
+          const linkBlock = child as LinkBlock;
+          return (
+            <a key={index} href={linkBlock.url}>
+              {linkBlock.children && renderChildren(linkBlock.children)}
+            </a>
+          );
+        default:
+          // Recursively render other block types
+          return renderContent([child]);
       }
     });
   };
 
+  // Helper function to render text with formatting
+  const renderText = (textBlock: TextBlock, key: number): ReactNode => {
+    let textElement = <>{textBlock.text}</>;
+
+    if (textBlock.bold) {
+      textElement = (
+        <strong key={key} className="font-bold my-2 inline-block">
+          {textElement}
+        </strong>
+      );
+    }
+    if (textBlock.italic) {
+      textElement = (
+        <em key={key}>
+          {textElement}
+        </em>
+      );
+    }
+    if (textBlock.underline) {
+      textElement = (
+        <u key={key}>
+          {textElement}
+        </u>
+      );
+    }
+    if (textBlock.code) {
+      textElement = (
+        <code key={key}>
+          {textElement}
+        </code>
+      );
+    }
+
+    return textElement;
+  };
+
   return (
-    <div className="container mx-auto px-4 w-2/3 mt-20 pl-10 relative pr-20" style={{ maxHeight: 'calc(100vh - 100px)' }}>
+    <div
+      className="container mx-auto px-4 w-2/3 mt-20 pl-10 relative pr-20"
+      style={{ maxHeight: 'calc(100vh - 100px)' }}
+    >
       <div className="sticky top-0 bg-white z-10 py-4">
         <button
           onClick={onBack}
@@ -156,13 +224,13 @@ export default function BlogPostPage({
           <span>Back to Posts</span>
         </button>
       </div>
-      <div 
+      <div
         ref={scrollContainerRef}
-        className="overflow-y-auto custom-scrollbar" 
-        style={{ 
+        className="overflow-y-auto custom-scrollbar"
+        style={{
           maxHeight: 'calc(100vh - 300px)',
           scrollbarWidth: 'thin',
-          scrollbarColor: 'rgba(155, 155, 155, 0.5) transparent'
+          scrollbarColor: 'rgba(155, 155, 155, 0.5) transparent',
         }}
       >
         <h1 className="text-3xl font-bold mb-6">{post.Title}</h1>
@@ -178,15 +246,16 @@ export default function BlogPostPage({
         <div className="mb-6">
           <div className="relative w-full h-64 overflow-hidden rounded-lg">
             <Image
-              src={'http://localhost:1337' + post.CoverImage.url}
+              src={post.CoverImage.url}
               alt={post.Title}
+              width={1000}
+              height={1000}
               className="absolute w-full h-full object-cover object-center"
-     
             />
           </div>
         </div>
         <div className="prose max-w-none">
-          {renderContent(post.Content as ContentBlock[])}
+          {renderContent(post.Content as Block[])}
         </div>
       </div>
       <style jsx global>{`
