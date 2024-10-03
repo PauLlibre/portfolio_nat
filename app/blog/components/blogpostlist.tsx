@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BlogPostCard from "./blogpostcard";
-import { Playfair_Display } from 'next/font/google';
 import { BlogPost } from "@/app/types/blogpost";
-
-const playfairDisplay = Playfair_Display({ subsets: ['latin'] });
-
-
 
 export default function BlogPostsList({ onPostClick }: { onPostClick: (post: BlogPost) => void }) {
   const [posts, setPosts] = useState<BlogPost[]>([]);

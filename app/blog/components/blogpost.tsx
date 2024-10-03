@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { BlogPost } from '@/app/types/blogpost';
 import { ArrowLeft } from 'react-feather';
+import Image from 'next/image';
 
 export default function BlogPostPage({
   post,
@@ -87,7 +88,7 @@ export default function BlogPostPage({
           );
         case 'image':
           return (
-            <img
+            <Image
               key={index}
               src={block.url}
               alt={block.alt || ''}
@@ -167,10 +168,11 @@ export default function BlogPostPage({
         </div>
         <div className="mb-6">
           <div className="relative w-full h-64 overflow-hidden rounded-lg">
-            <img
+            <Image
               src={'http://localhost:1337' + post.CoverImage.url}
               alt={post.Title}
               className="absolute w-full h-full object-cover object-center"
+     
             />
           </div>
         </div>
