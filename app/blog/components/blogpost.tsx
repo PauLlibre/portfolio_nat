@@ -3,6 +3,17 @@ import { BlogPost } from '@/app/types/blogpost';
 import { ArrowLeft } from 'react-feather';
 import Image from 'next/image';
 
+interface ContentBlock {
+  type: string;
+  children: ContentBlock[];
+  text?: string;
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  code?: boolean;
+  url: string; 
+}
+
 export default function BlogPostPage({
   post,
   onBack,
@@ -32,7 +43,7 @@ export default function BlogPostPage({
   }, []);
 
   // Recursive function to render content blocks
-  const renderContent = (contentBlocks: any[]) => {
+  const renderContent = (contentBlocks: ContentBlock[]) => {
     return contentBlocks.map((block, index) => {
       const { type, children } = block;
 
@@ -91,9 +102,7 @@ export default function BlogPostPage({
             <Image
               key={index}
               src={block.url}
-              alt={block.alt || ''}
-              width={block.width}
-              height={block.height}
+              alt={''}
             />
           );
         default:
@@ -177,7 +186,7 @@ export default function BlogPostPage({
           </div>
         </div>
         <div className="prose max-w-none">
-          {renderContent(post.Content)}
+          {renderContent(post.Content as ContentBlock[])}
         </div>
       </div>
       <style jsx global>{`
