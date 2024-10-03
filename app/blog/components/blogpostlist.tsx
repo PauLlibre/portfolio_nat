@@ -13,7 +13,7 @@ export default function BlogPostsList({ onPostClick }: { onPostClick: (post: Blo
   const [posts, setPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/blog-posts?populate=*")
+    fetch("https://elegant-beauty-0e281b25e9.strapiapp.com/api/blog-posts?populate=*")
       .then((response) => response.json())
       .then((data) => setPosts(data.data))
       .catch((error) => console.error("Error fetching blog posts:", error));

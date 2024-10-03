@@ -21,7 +21,7 @@ export default function BlogPostCard({
             onClick={() => onPostClick(post)}
         >
             <Image 
-                src={'http://localhost:1337' + post.CoverImage.url} 
+                src={post.CoverImage.url} 
                 alt={post.Title} 
                 width={600} 
                 height={600} 
