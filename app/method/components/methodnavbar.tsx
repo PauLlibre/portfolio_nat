@@ -12,26 +12,19 @@ export default function MethodNavbar({ selectedSection, setSelectedSection }: { 
                 </li>
                 <li className="flex-1 text-center">
                     <a 
+                        onClick={() => setSelectedSection("tecnicas")} 
+                        className={`block w-full cursor-pointer ${selectedSection === "tecnicas" ? "font-bold" : ""}`}
+                    >
+                        Método y Tecnicas
+                        {/* FOTO TRES CÍRCULOS Y DESCRIPCIÓN */}
+                    </a>
+                </li>
+                <li className="flex-1 text-center">
+                    <a 
                         onClick={() => setSelectedSection("enfoque")} 
                         className={`block w-full cursor-pointer ${selectedSection === "enfoque" ? "font-bold" : ""}`}
                     >
-                        Enfoque
-                    </a>
-                </li>
-                <li className="flex-1 text-center">
-                    <a 
-                        onClick={() => setSelectedSection("terapia-individual")} 
-                        className={`block w-full cursor-pointer ${selectedSection === "terapia-individual" ? "font-bold" : ""}`}
-                    >
-                        Terapia Individual
-                    </a>
-                </li>
-                <li className="flex-1 text-center">
-                    <a 
-                        onClick={() => setSelectedSection("workshops-relacionales")} 
-                        className={`block w-full cursor-pointer ${selectedSection === "workshops-relacionales" ? "font-bold" : ""}`}
-                    >
-                        Workshops Relacionales
+                        Servicios
                     </a>
                 </li>
             </ul>

@@ -5,9 +5,9 @@ import Resume from "../components/sections/landingPage/resume";
 import { useState, useEffect } from "react";
 import MethodNavbar from "./components/methodnavbar";
 import EnfoqueTerapeutico from "./components/enfoqueterapeutico";
-import Enfoque from "./components/enfoque";
 import TerapiaIndividual from "./components/terapia-individual";
-import Workshops from "./components/workshops"; 
+import Workshops from "./components/workshops";
+import Tecnicas from "./components/tecnicas"; 
 
 export default function Method() {
     const [selectedSection, setSelectedSection] = useState<string>("");
@@ -22,7 +22,7 @@ export default function Method() {
         <div className="w-2/3">
             <MethodNavbar selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
             {selectedSection === "enfoque-terapeutico" && <EnfoqueTerapeutico />}
-            {selectedSection === "enfoque" && <Enfoque />}
+            {selectedSection === "tecnicas" && <Tecnicas />}
             {selectedSection === "terapia-individual" && <TerapiaIndividual />}
             {selectedSection === "workshops-relacionales" && <Workshops />}
         </div>

@@ -21,7 +21,7 @@ export default function Footer() {
             <ul className="text-sm">
               <li className="mb-2">
                 <Link href="/" className="text-blue-600 hover:text-blue-800">
-                  Home
+                  Enfoque
                 </Link>
               </li>
               <li className="mb-2">
