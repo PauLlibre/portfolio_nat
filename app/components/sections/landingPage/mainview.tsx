@@ -3,7 +3,6 @@
 import Image from "next/image";
 import threeCircles from "../../../public/images/2blackdots.jpg";
 import nataliaBertran from "../../../public/images/nati.jpeg";
-import { useEffect, useRef, useState } from "react";
 import { Barlow } from "next/font/google";
 
 const barlow = Barlow({ subsets: ["latin"], weight: ["400", "700"] });
@@ -20,8 +19,8 @@ export default function MainView() {
             PSICOTERAPIA / TERAPIA CORPORAL / WORKSHOPS
           </div>
           <div className="font-mono tracking-wider text-gray-500 pt-4 italic">
-            “El trauma no es sólo un evento del pasado; es la huella que deja en
-            cuerpo y mente.”
+            &ldquo; El trauma no es sólo un evento del pasado; es la huella que
+            deja en cuerpo y mente. &ldquo;
             <p className="mt-2">― Bessel A. van der Kolk</p>
           </div>
           <button className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group w-48 mt-4 mb-10">
@@ -88,7 +87,7 @@ tracking-wider text-gray-500"
             </div>
             <div>
               <p className="italic pt-4 pb-4">
-                "El dolor no escuchado se queda en el cuerpo"
+                &ldquo;El dolor no escuchado se queda en el cuerpo&ldquo;
               </p>
               Mi objetivo es ayudarte a darle voz a lo que sientes de manera
               respetuosa y sin prisa.
