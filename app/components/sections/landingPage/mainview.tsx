@@ -69,10 +69,9 @@ tracking-wider text-gray-500 text-sm sm:text-base"
           <Image
             src={nataliaBertran}
             alt="Natalia Bertran"            
-            width={500}
-            height={500}
-            style={{ objectFit: 'cover', zIndex: -1 }}
             className="rounded-xl"
+            fill
+            style={{ objectFit: 'cover', zIndex: -1 }}
           />
         </div>
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
