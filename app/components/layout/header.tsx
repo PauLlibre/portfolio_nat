@@ -30,23 +30,23 @@ export default function Header() {
                 </div>
                 <ul className={`${isMenuOpen ? 'block' : 'hidden'} w-full lg:flex lg:items-center lg:w-auto mt-4 lg:mt-0 space-y-4 lg:space-y-0 lg:space-x-8 xl:space-x-24 text-gray-400`}>
                     <li>
-                        <Link href="/" className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base">
+                        <Link href="/method" className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base">
                             Enfoque
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/method" className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base">
+                        <Link href="/work" className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base">
                             Cómo trabajo
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     </li>
-                    <li>
+                    {false && <li>
                         <Link href="/blog" className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base">
                             Blog
                             <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
-                    </li>
+                    </li>}
                 </ul>
                 <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:block mt-4 lg:mt-0`}>
                     <button className="w-full lg:w-auto border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group text-sm md:text-base">

@@ -1,12 +1,25 @@
 import { Inter } from "next/font/google";
 import Header from "./header";
 import "../../globals.css";
+import localFont from "next/font/local";
 const inter = Inter({ subsets: ["latin"] });
+import WhatsAppButton from "../sections/landingPage/whatsapp";
 
 // export const metadata = {
-//   title: "Natalia Bertran - Portfolio",    
+//   title: "Natalia Bertran - Portfolio",
 //   description: "Portfolio de Natalia Bertran, psicologa",
 // };
+
+const geistSans = localFont({
+  src: "../../fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "../../fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export default function RootLayout({
   children,
@@ -15,9 +28,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: "#F8F7F1" }}
+      >
         <Header />
         <main>{children}</main>
+        <WhatsAppButton
+          phoneNumber="34612345678"
+          message="Hola, me gustaría solicitar más información."
+        />
       </body>
     </html>
   );

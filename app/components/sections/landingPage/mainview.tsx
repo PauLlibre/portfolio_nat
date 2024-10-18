@@ -4,7 +4,7 @@ import Image from "next/image";
 import threeCircles from "../../../public/images/2blackdots.jpg";
 import nataliaBertran from "../../../public/images/nati.jpeg";
 import { Barlow } from "next/font/google";
-
+import WhatsAppButton from "@/app/components/sections/landingPage/whatsapp";
 const barlow = Barlow({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function MainView() {
@@ -23,10 +23,11 @@ export default function MainView() {
             deja en cuerpo y mente. &ldquo;
             <p className="mt-2">― Bessel A. van der Kolk</p>
           </div>
-          <button className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group w-48 mt-4 mb-10 text-sm sm:text-base">
-            Solicita información
-          </button>
-          <div className="font-mono uppercase tracking-wider text-xl sm:text-2xl">
+          <WhatsAppButton
+            phoneNumber="34612345678"
+            message="Hola, me gustaría solicitar más información."
+          />
+          <div className="font-mono uppercase tracking-wider text-xl sm:text-2xl mt-4">
             Un espacio seguro para ti
           </div>
           <div
