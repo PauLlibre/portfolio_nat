@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import Header from "./header";
 import "../../globals.css";
 import localFont from "next/font/local";
-const inter = Inter({ subsets: ["latin"] });
 import WhatsAppButton from "../sections/landingPage/whatsapp";
 
 // export const metadata = {
@@ -35,7 +34,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <WhatsAppButton
-          phoneNumber="34612345678"
+          phoneNumber="34722402288"
           message="Hola, me gustaría solicitar más información."
         />
       </body>
