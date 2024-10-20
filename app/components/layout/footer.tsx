@@ -1,83 +1,60 @@
 import Link from "next/link";
+import { Barlow } from 'next/font/google';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
+const barlow = Barlow({ subsets: ['latin'], weight: ['400', '700'] });
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-4">
+    <footer className={`${barlow.className} py-8 bg-black text-white`}>
+      <div className="container mx-auto px-4 sm:px-8 md:px-20 lg:px-40">
         <div className="flex flex-wrap justify-between">
-          <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">Natalia Bertran</h3>
-            <p className="text-sm text-gray-600 pr-8">
-              Hola, soy Natalia, una joven psicóloga apasionada por el bienestar
-              emocional y el crecimiento personal. Mi objetivo es brindar un
-              espacio seguro y acogedor donde puedas explorar tus pensamientos y
-              sentimientos. A través de enfoques terapéuticos basados en
-              evidencia, te acompañaré en el camino hacia una vida más plena y
-              equilibrada.
+          <div className="w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-2xl font-semibold mb-4">BERLIN PSICOLOGIA</h3>
+            <p className="text-sm font-mono tracking-wider pr-8">
+              Un espacio seguro para explorar y sanar desde un enfoque que integra mente, cuerpo y emociones.
             </p>
           </div>
-          <div className="w-full md:w-1/3 mb-6 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
-            <ul className="text-sm">
+          <div className="w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
+            <ul className="text-sm font-mono tracking-wider">
               <li className="mb-2">
-                <Link href="/" className="text-blue-600 hover:text-blue-800">
+                <Link href="/method" className="hover:text-gray-300 transition-colors">
                   Enfoque
                 </Link>
               </li>
               <li className="mb-2">
-                <Link
-                  href="/projects"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  href="/blog"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  Blog
+                <Link href="/work" className="hover:text-gray-300 transition-colors">
+                  Cómo trabajo
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/3">
-            <h3 className="text-lg font-semibold mb-2">Connect</h3>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  GitHub
+          <div className="w-full md:w-1/2 lg:w-1/3">
+            <h3 className="text-xl font-semibold mb-4">Contacto</h3>
+            <ul className="text-sm font-mono tracking-wider">
+              <li className="mb-2 flex items-center">
+                <FaWhatsapp className="mr-2" />
+                <a href="https://wa.me/34722402288" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
+                  WhatsApp
+                </a>
+              </li>
+              <li className="mb-2 flex items-center">
+                <FaInstagram className="mr-2" />
+                <a href="https://www.instagram.com/berlinpsicologia" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
+                  Instagram
                 </a>
               </li>
               <li className="mb-2">
-                <a
-                  href="https://linkedin.com/in/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  Email
+                <a href="mailto:info@berlinpsicologia.com" className="hover:text-gray-300 transition-colors">
+                  info@berlinpsicologia.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm font-mono tracking-wider">
+          © {new Date().getFullYear()} Berlin Psicologia. Todos los derechos reservados.
         </div>
       </div>
     </footer>

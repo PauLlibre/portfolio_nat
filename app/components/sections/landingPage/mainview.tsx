@@ -49,7 +49,10 @@ tracking-wider text-gray-500 text-sm sm:text-base"
               bienestar.
             </div>
           </div>
-          <button className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group w-48 mt-4 mb-10 text-sm sm:text-base">
+          <button 
+            onClick={() => window.location.href = '/work'}
+            className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group w-48 mt-4 mb-10 text-sm sm:text-base"
+          >
             Cómo trabajo
           </button>
         </div>

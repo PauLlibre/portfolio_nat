@@ -2,6 +2,7 @@ import Header from "./header";
 import "../../globals.css";
 import localFont from "next/font/local";
 import WhatsAppButton from "../sections/landingPage/whatsapp";
+import Footer from "./footer";
 
 // export const metadata = {
 //   title: "Natalia Bertran - Portfolio",
@@ -36,6 +37,7 @@ export default function RootLayout({
           phoneNumber="34722402288"
           message="Hola, me gustaría solicitar más información."
         />
+        <Footer />
       </body>
     </html>
   );
