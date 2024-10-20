@@ -4,8 +4,7 @@ import MainView from "./components/sections/landingPage/mainview";
 export default function Home() {
   return (
     <RootLayout>
-      <div className="flex ">
-        {/* <Resume /> */}
+      <div className="flex">
         <MainView />
       </div>
     </RootLayout>

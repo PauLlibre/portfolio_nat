@@ -19,6 +19,14 @@ export default function Header() {
         setShowWhatsAppForm(false);
     };
 
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setIsMenuOpen(false); // Close the menu after clicking
+    };
+
     return (
         <header className={`fixed top-0 left-0 right-0 ${barlow.className} z-50`}>
             <nav
@@ -56,6 +64,16 @@ export default function Header() {
                         isMenuOpen ? "block" : "hidden"
                     } w-full lg:flex lg:items-center lg:w-auto mt-4 lg:mt-0 space-y-4 lg:space-y-0 lg:space-x-8 xl:space-x-24 text-gray-400`}
                 >
+                    <li>
+                        <Link
+                            href="/"
+                            className="block relative group hover:text-black transition-colors font-mono tracking-wider text-gray-500 text-sm md:text-base"
+                            onClick={() => scrollToSection('quien-soy')} 
+                        >
+                            Quién soy
+                            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                    </li>
                     <li>
                         <Link
                             href="/method"

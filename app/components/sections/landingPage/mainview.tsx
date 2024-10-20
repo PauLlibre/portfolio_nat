@@ -14,7 +14,9 @@ export default function MainView() {
     >
       <div className="flex flex-col lg:flex-row gap-10 text-justify">
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
-          <div className="text-4xl sm:text-5xl lg:text-6xl">BERLIN PSICOLOGIA</div>
+          <div className="text-4xl sm:text-5xl lg:text-6xl">
+            BERLIN PSICOLOGIA
+          </div>
           <div className="font-mono uppercase tracking-wider text-gray-500 text-sm sm:text-base">
             PSICOTERAPIA / TERAPIA CORPORAL / WORKSHOPS
           </div>
@@ -22,6 +24,15 @@ export default function MainView() {
             &ldquo; El trauma no es sólo un evento del pasado; es la huella que
             deja en cuerpo y mente. &ldquo;
             <p className="mt-2">― Bessel A. van der Kolk</p>
+          </div>
+          <div className="lg:hidden w-full h-64 sm:h-80 relative rounded-xl flex justify-center items-center my-6">
+            <Image
+              src={threeCircles}
+              alt="Natalia Bertran"
+              className="rounded-xl"
+              fill
+              style={{ objectFit: "cover", zIndex: -1 }}
+            />
           </div>
           <WhatsAppButton
             phoneNumber="34612345678"
@@ -49,8 +60,8 @@ tracking-wider text-gray-500 text-sm sm:text-base"
               bienestar.
             </div>
           </div>
-          <button 
-            onClick={() => window.location.href = '/work'}
+          <button
+            onClick={() => (window.location.href = "/work")}
             className="border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition-colors relative group w-48 mt-4 mb-10 text-sm sm:text-base"
           >
             Cómo trabajo
@@ -63,19 +74,22 @@ tracking-wider text-gray-500 text-sm sm:text-base"
             className="rounded-xl"
             width={500}
             height={500}
-            style={{ objectFit: 'cover', zIndex: -1 }}
+            style={{ objectFit: "cover", zIndex: -1 }}
           />
         </div>
       </div>
       <div className="w-full h-1 bg-gradient-to-r from-transparent via-black-300 to-transparent my-8 mt-10 sm:mt-20 mb-10 sm:mb-20"></div>
-      <div className="flex flex-col lg:flex-row w-full justify-start gap-10 text-justify">
+      <div
+        id="quien-soy"
+        className="flex flex-col lg:flex-row w-full justify-start gap-10 text-justify"
+      >
         <div className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-full relative rounded-xl flex justify-center lg:justify-start items-center mb-6 lg:mb-0">
           <Image
             src={nataliaBertran}
-            alt="Natalia Bertran"            
+            alt="Natalia Bertran"
             className="rounded-xl"
             fill
-            style={{ objectFit: 'cover', zIndex: -1 }}
+            style={{ objectFit: "cover", zIndex: -1 }}
           />
         </div>
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
@@ -105,19 +119,30 @@ tracking-wider text-gray-500 text-sm sm:text-base"
             </div>
             <ol className="ml-4 list-disc list-inside pt-4">
               <li className="mb-2">
-                <p className="font-bold inline">IFS</p>: (Sistema de Familia Interna), para comprender mejor las diferentes partes de ti y cómo se relacionan entre sí.
+                <p className="font-bold inline">IFS</p>: (Sistema de Familia
+                Interna), para comprender mejor las diferentes partes de ti y
+                cómo se relacionan entre sí.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">Tratamiento del Trauma</p>: para profundizar en las experiencias que puedan estar marcando tu vida de manera significativa.
+                <p className="font-bold inline">Tratamiento del Trauma</p>: para
+                profundizar en las experiencias que puedan estar marcando tu
+                vida de manera significativa.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">Reprocesamiento de Trauma (Método Aleceia)</p>: que es muy útil para procesar experiencias traumáticas.
+                <p className="font-bold inline">
+                  Reprocesamiento de Trauma (Método Aleceia)
+                </p>
+                : que es muy útil para procesar experiencias traumáticas.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">Trabajo corporal</p>: que ayuda a conectar lo que sientes físicamente con tus emociones y pensamientos.
+                <p className="font-bold inline">Trabajo corporal</p>: que ayuda
+                a conectar lo que sientes físicamente con tus emociones y
+                pensamientos.
               </li>
               <li>
-                <p className="font-bold inline">Trabajo con Arte Terapia</p>: que nos permite explorar dinámicas emocionales y familiares desde una perspectiva artistica.
+                <p className="font-bold inline">Trabajo con Arte Terapia</p>:
+                que nos permite explorar dinámicas emocionales y familiares
+                desde una perspectiva artistica.
               </li>
             </ol>
           </div>
