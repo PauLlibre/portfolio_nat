@@ -101,7 +101,7 @@ tracking-wider text-gray-500 text-sm sm:text-base"
               Hola! Soy Natalia Bertran, psicóloga sanitaria y terapeuta
               corporal, especialista en trauma. Berlin Psicología es un espacio
               donde podrás explorar y sanar desde un enfoque que integra mente,
-              cuerpo y emociones en Berlín.
+              cuerpo y emociones en Barcelona.
             </p>
             <blockquote>
               <p className="italic pt-4 pb-4">

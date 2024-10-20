@@ -46,8 +46,8 @@ export default function Footer() {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="mailto:info@berlinpsicologia.com" className="hover:text-gray-300 transition-colors">
-                  info@berlinpsicologia.com
+                <a href="mailto:berlinacts@gmail.com" className="hover:text-gray-300 transition-colors">
+                  berlinacts@gmail.com
                 </a>
               </li>
             </ul>
