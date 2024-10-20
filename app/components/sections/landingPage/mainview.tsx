@@ -9,22 +9,22 @@ const barlow = Barlow({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function MainView() {
   return (
-    <div
+    <main
       className={`flex flex-col w-full gap-4 pb-10 px-4 sm:px-8 md:px-20 lg:px-40 mt-20 sm:mt-40 lg:mt-60 ${barlow.className}`}
     >
-      <div className="flex flex-col lg:flex-row gap-10 text-justify">
+      <section className="flex flex-col lg:flex-row gap-10 text-justify">
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
-          <div className="text-4xl sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl">
             BERLIN PSICOLOGIA
-          </div>
-          <div className="font-mono uppercase tracking-wider text-gray-500 text-sm sm:text-base">
+          </h1>
+          <p className="font-mono uppercase tracking-wider text-gray-500 text-sm sm:text-base">
             PSICOTERAPIA / TERAPIA CORPORAL / WORKSHOPS
-          </div>
-          <div className="font-mono tracking-wider text-gray-500 pt-4 italic text-sm sm:text-base">
-            &ldquo; El trauma no es sólo un evento del pasado; es la huella que
-            deja en cuerpo y mente. &ldquo;
-            <p className="mt-2">― Bessel A. van der Kolk</p>
-          </div>
+          </p>
+          <blockquote className="font-mono tracking-wider text-gray-500 pt-4 italic text-sm sm:text-base">
+            <p>&ldquo; El trauma no es sólo un evento del pasado; es la huella que
+            deja en cuerpo y mente. &ldquo;</p>
+            <cite className="mt-2">― Bessel A. van der Kolk</cite>
+          </blockquote>
           <div className="lg:hidden w-full h-64 sm:h-80 relative rounded-xl flex justify-center items-center my-6">
             <Image
               src={threeCircles}
@@ -77,78 +77,82 @@ tracking-wider text-gray-500 text-sm sm:text-base"
             style={{ objectFit: "cover", zIndex: -1 }}
           />
         </div>
-      </div>
-      <div className="w-full h-1 bg-gradient-to-r from-transparent via-black-300 to-transparent my-8 mt-10 sm:mt-20 mb-10 sm:mb-20"></div>
-      <div
+      </section>
+
+      <hr className="w-full h-1 bg-gradient-to-r from-transparent via-black-300 to-transparent my-8 mt-10 sm:mt-20 mb-10 sm:mb-20" />
+
+      <section
         id="quien-soy"
         className="flex flex-col lg:flex-row w-full justify-start gap-10 text-justify"
       >
         <div className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-full relative rounded-xl flex justify-center lg:justify-start items-center mb-6 lg:mb-0">
           <Image
             src={nataliaBertran}
-            alt="Natalia Bertran"
+            alt="Natalia Bertran, psicóloga y terapeuta corporal en Berlín"
             className="rounded-xl"
             fill
             style={{ objectFit: "cover", zIndex: -1 }}
           />
         </div>
         <div className="flex flex-col gap-4 w-full lg:w-1/2">
-          <div className="text-4xl sm:text-5xl lg:text-6xl">QUIÉN SOY</div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl">QUIÉN SOY</h2>
           <div className="flex flex-col text-gray-500 font-mono tracking-wider text-gray-500 mt-4 text-sm sm:text-base">
-            <div className="mb-2">
+            <p className="mb-2">
               Hola! Soy Natalia Bertran, psicóloga sanitaria y terapeuta
-              corporal, especialista en trauma. Berlin Psicología és un espacio
+              corporal, especialista en trauma. Berlin Psicología es un espacio
               donde podrás explorar y sanar desde un enfoque que integra mente,
-              cuerpo y emociones.
-            </div>
-            <div>
+              cuerpo y emociones en Berlín.
+            </p>
+            <blockquote>
               <p className="italic pt-4 pb-4">
                 &ldquo;El dolor no escuchado se queda en el cuerpo&ldquo;
               </p>
+            </blockquote>
+            <p>
               Mi objetivo es ayudarte a darle voz a lo que sientes de manera
-              respetuosa y sin prisa.
-            </div>
+              respetuosa y sin prisa, ofreciendo terapia psicológica y corporal en Berlín.
+            </p>
           </div>
-          <div className="text-3xl sm:text-4xl pt-4">Cómo trabajo</div>
+          <h3 className="text-3xl sm:text-4xl pt-4">Cómo trabajo</h3>
           <div className="flex flex-col text-gray-500 font-mono tracking-wider text-gray-500 mt-4 text-sm sm:text-base">
-            <div className="mb-2">
+            <p className="mb-2">
               Cada proceso terapéutico es único, y lo importante es encontrar
-              juntos lo que mejor funcione para ti. No importa cómo llegues,
+              juntos lo que mejor funcione para ti en Berlín. No importa cómo llegues,
               aquí respetamos tus tiempos y necesidades. Utilizo diferentes
               herramientas según lo que sea más adecuado para tu proceso:
-            </div>
-            <ol className="ml-4 list-disc list-inside pt-4">
+            </p>
+            <ul className="ml-4 list-disc list-inside pt-4">
               <li className="mb-2">
-                <p className="font-bold inline">IFS</p>: (Sistema de Familia
-                Interna), para comprender mejor las diferentes partes de ti y
+                <strong>IFS</strong> (Sistema de Familia
+                Interna): para comprender mejor las diferentes partes de ti y
                 cómo se relacionan entre sí.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">Tratamiento del Trauma</p>: para
+                <strong>Tratamiento del Trauma</strong>: para
                 profundizar en las experiencias que puedan estar marcando tu
                 vida de manera significativa.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">
-                  Reprocesamiento de Trauma (Método Aleceia)
-                </p>
+                <strong>Reprocesamiento de Trauma (Método Aleceia)</strong>
                 : que es muy útil para procesar experiencias traumáticas.
               </li>
               <li className="mb-2">
-                <p className="font-bold inline">Trabajo corporal</p>: que ayuda
+                <strong>Trabajo corporal</strong>: que ayuda
                 a conectar lo que sientes físicamente con tus emociones y
                 pensamientos.
               </li>
               <li>
-                <p className="font-bold inline">Trabajo con Arte Terapia</p>:
+                <strong>Trabajo con Arte Terapia</strong>:
                 que nos permite explorar dinámicas emocionales y familiares
-                desde una perspectiva artistica.
+                desde una perspectiva artística.
               </li>
-            </ol>
+            </ul>
           </div>
         </div>
-      </div>
-      <div className="w-full h-1px bg-gradient-to-r from-transparent via-black-300 to-transparent my-8 mt-10 sm:mt-20 mb-10 sm:mb-20"></div>
-    </div>
+      </section>
+
+      <hr className="w-full h-1px bg-gradient-to-r from-transparent via-black-300 to-transparent my-8 mt-10 sm:mt-20 mb-10 sm:mb-20" />
+    </main>
   );
 }
+

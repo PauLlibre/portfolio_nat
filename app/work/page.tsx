@@ -15,9 +15,9 @@ import 'swiper/css/navigation';
 import terapiaIndividual from "../public/images/terapia_individual2.png";
 import terapiaCorporal from "../public/images/terapia_corporal.png";
 import terapiaCorporal2 from "../public/images/terapia_corporal2.jpeg";
-import workshops1 from "../public/images/workshop1.png";
-import workshops2 from "../public/images/workshop2.png";
-import workshops3 from "../public/images/workshop3.png";
+import workshops3 from "../public/images/terapia_grupal.jpeg";
+import workshops2 from "../public/images/terapia_grupal2.jpeg";
+import workshops1 from "../public/images/terapia_grupal3.jpeg";
 
 import { StaticImageData } from "next/image";
 
