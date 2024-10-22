@@ -88,7 +88,7 @@ tracking-wider text-gray-500 text-sm sm:text-base"
         <div className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-full relative rounded-xl flex justify-center lg:justify-start items-center mb-6 lg:mb-0">
           <Image
             src={nataliaBertran}
-            alt="Natalia Bertran, psicóloga y terapeuta corporal en Berlín"
+            alt="Natalia Bertran, psicóloga y terapeuta corporal en Barcelona"
             className="rounded-xl"
             fill
             style={{ objectFit: "cover", zIndex: -1 }}
@@ -110,14 +110,14 @@ tracking-wider text-gray-500 text-sm sm:text-base"
             </blockquote>
             <p>
               Mi objetivo es ayudarte a darle voz a lo que sientes de manera
-              respetuosa y sin prisa, ofreciendo terapia psicológica y corporal en Berlín.
+              respetuosa y sin prisa, ofreciendo terapia psicológica y corporal en Barcelona.
             </p>
           </div>
           <h3 className="text-3xl sm:text-4xl pt-4">Cómo trabajo</h3>
           <div className="flex flex-col text-gray-500 font-mono tracking-wider text-gray-500 mt-4 text-sm sm:text-base">
             <p className="mb-2">
               Cada proceso terapéutico es único, y lo importante es encontrar
-              juntos lo que mejor funcione para ti en Berlín. No importa cómo llegues,
+              juntos lo que mejor funcione para ti en Barcelona. No importa cómo llegues,
               aquí respetamos tus tiempos y necesidades. Utilizo diferentes
               herramientas según lo que sea más adecuado para tu proceso:
             </p>
